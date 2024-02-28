@@ -85,7 +85,7 @@ func init() {
 }
 
 var reportTXTTemplate = `
-Vulnerabilities: {{ .VulnerabilitiesCount }} 
+Exploitation Results: {{ .VulnerabilitiesCount }} 
 {{range .Vulnerabilities}}
 	Host {{.Host.Hostport}}
 	Version {{.Host.Version}}
@@ -115,11 +115,16 @@ Active Hosts: {{ .ActiveHostsCount }}
 {{end}}
 `
 
-var reportHTMLTemplate = `
-<html>
-<body>
+/*
 
-<h1>Vulnerabilities: {{ .VulnerabilitiesCount }}</h1>
+HTML Format modifications
+*/
+
+var reportHTMLTemplate = `
+<html lang="ru">
+<body style="background-color: rgb(13, 17, 23); box-sizing: border-box; max-width: 1200px; margin: 0 24px; box-sizing: inherit; display: block; word-wrap: break-word; font-family: Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; color: rgba(30,30,30,0.8); -webkit-text-size-adjust: 100%">
+
+<h1>Exploitation Results: {{ .VulnerabilitiesCount }}</h1>
 <table>
 <thead>
 	<tr>
