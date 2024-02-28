@@ -12,7 +12,7 @@ var (
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print the version number of ssh-auditor",
+	Short: "Current production build state and version",
 	// Don't create a store
 	PersistentPreRunE:  func(cmd *cobra.Command, args []string) error { return nil },
 	PersistentPostRunE: func(cmd *cobra.Command, args []string) error { return nil },
