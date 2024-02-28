@@ -51,5 +51,6 @@ var RootCmd = &cobra.Command{
 func init() {
 	RootCmd.PersistentFlags().IntVar(&concurrency, "concurrency", 256, "Number of concurrent hosts to scan at once")
 	RootCmd.PersistentFlags().StringVar(&dbPath, "db", "ssh_db.sqlite", "Path to database file")
-	RootCmd.PersistentFlags().BoolVar(&debug, "debug", false, "debug")
+	// debug is now true by default due to unexpected behavior. 
+	RootCmd.PersistentFlags().BoolVar(&debug, "debug", true, "debug")
 }
